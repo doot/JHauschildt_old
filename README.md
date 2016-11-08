@@ -1,4 +1,5 @@
 # JHauschildt
+[![Build Status](https://snap-ci.com/doot/JHauschildt/branch/master/build_image)](https://snap-ci.com/doot/JHauschildt/branch/master)
 
 Placeholder for jhauschildt.com.  This will eventually be a real webpage...
 
