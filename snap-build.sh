@@ -2,4 +2,4 @@
 set -e
 
 echo -e "Running build...\n"
-ng build --prod
+ng build --prod --aot
