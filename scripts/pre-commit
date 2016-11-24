@@ -39,7 +39,11 @@ EOF
 fi
 
 # If there are whitespace errors, print the offending file names and fail.
-exec git diff-index --check --cached $against --
+echo -n "Checking for whitespace errors...\n";
+git diff-index --check --cached $against -- || exit 1
 
-ng lint
-exit 1
+echo -n "Linting...\n";
+ng lint || exit 1
+
+echo -n "Running tests...\n";
+ng test --watch false --browsers PhantomJS || exit 1

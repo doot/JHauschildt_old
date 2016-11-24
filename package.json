@@ -13,7 +13,6 @@
     "run-precommit": "scripts/pre-commit"
   },
   "precommit": [
-    "lint",
     "run-precommit"
   ],
   "private": true,

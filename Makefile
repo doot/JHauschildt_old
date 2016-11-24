@@ -9,7 +9,8 @@ DH_NAME := doot
 pipeline: test build docker_build docker_test
 
 init:
-	ln -i -s scripts/pre-commit .git/hooks/pre-commit
+	#ln -i -s scripts/pre-commit .git/hooks/pre-commit
+	#above line should no longer be necessary with pre-commit package
 	npm install -g angular-cli
 	npm install
 	
