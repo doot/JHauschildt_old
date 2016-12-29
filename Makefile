@@ -24,19 +24,19 @@ update_cli:
 	rm -rf node_modules dist tmp
 	npm install --save-dev angular-cli@latest
 	npm install
-	ng init
+	ng init --routing
 
 test:
 	@echo -e "Linting...\n"
 	ng lint
 	@echo -e "Running tests...\n"
-	ng test --watch false --browsers PhantomJS
+	ng test --watch false --browsers PhantomJS --no-progress
 	@echo -e "Running e2e tests...\n"
 	@echo "..."
 
 build:
 	@echo -e "Running build...\n"
-	ng build --prod
+	ng build --prod --aot --no-progress
 
 docker_build:
 	@echo -e "Running docker build...\n"
@@ -65,7 +65,7 @@ docker_push:
 	fi;
 
 dev:
-	ng serve --port $$C9_PORT --host $$C9_IP
+	ng serve --port $$C9_PORT --host $$C9_IP --aot --no-progress
 	
 deploy:
 	# deploy
