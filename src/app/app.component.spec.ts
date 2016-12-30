@@ -7,7 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { Routes, RouterModule } from '@angular/router';
 
 
-describe('AppComponent', () => {
+describe('App: JHauschildt', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
