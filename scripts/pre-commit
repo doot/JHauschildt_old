@@ -43,4 +43,4 @@ echo -n "Checking for whitespace errors...\n";
 git diff-index --check --cached $against -- || exit 1
 
 echo -n "Running tests...\n";
-make test
+make test || exit 1
