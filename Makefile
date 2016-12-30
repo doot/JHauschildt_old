@@ -48,8 +48,6 @@ docker_test:
 	@echo -e "Loading previously built image ($(APP_NAME)-app.tar) and testing...\n"
 	docker load -i $(APP_NAME)-app.tar
 	$(eval DID := $(shell docker run -d -p 8080:80 $(DH_NAME)/$(APP_NAME):$(SNAP_COMMIT_SHORT)))
-	@echo $DID
-	docker ps
 	sleep 30
 	docker logs $(DID)
 	curl --retry 10 --retry-delay 5 -v --fail http://localhost:8080
