@@ -1,10 +1,10 @@
-import { JHauschildtPage } from './app.po';
+import { JhauschildtPage } from './app.po';
 
 describe('jhauschildt App', function() {
-  let page: JHauschildtPage;
+  let page: JhauschildtPage;
 
   beforeEach(() => {
-    page = new JHauschildtPage();
+    page = new JhauschildtPage();
   });
 
   it('should display message saying app works', () => {
