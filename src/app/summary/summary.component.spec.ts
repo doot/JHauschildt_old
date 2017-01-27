@@ -6,8 +6,8 @@ import { SummaryService } from './summary.service';
 
 describe('Component: Summary', () => {
   it('should create an instance', () => {
-    let service: SummaryService = new SummaryService();
-    let component: SummaryComponent = new SummaryComponent(service);
+    const service: SummaryService = new SummaryService();
+    const component: SummaryComponent = new SummaryComponent(service);
     expect(component).toBeTruthy();
   });
 });

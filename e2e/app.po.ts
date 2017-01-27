@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class JHauschildtPage {
+export class JhauschildtPage {
   navigateTo() {
     return browser.get('/');
   }
