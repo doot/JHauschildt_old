@@ -26,7 +26,7 @@ update_cli: ## Shortcut to update angular-cli to the latest version
 	rm -rf node_modules dist tmp
 	npm install --save-dev angular-cli@latest
 	npm install
-	ng init --routing
+	ng update --routing
 
 test: ## Run linter and tests through PhantomJS
 	@echo -e "Linting...\n"
