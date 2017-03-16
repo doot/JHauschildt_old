@@ -60,8 +60,10 @@ docker_push: ## Deploys docker image file to docker hub tagged with the commit h
 	  echo -e "Detected master branch, pushing to docker hub...\n"; \
 	  docker load -i $(APP_NAME)-app.tar; \
 	  docker tag $(DH_NAME)/$(APP_NAME):${COMMIT_SHORT} $(DH_NAME)/$(APP_NAME):stable; \
-	  docker push $(DH_NAME)/$(APP_NAME):stable; \
-	  docker push $(DH_NAME)/$(APP_NAME):${COMMIT_SHORT}; \
+	  docker tag $(DH_NAME)/$(APP_NAME):${COMMIT_SHORT} $(DH_NAME)/$(APP_NAME):latest; \
+	  #docker push $(DH_NAME)/$(APP_NAME):stable; \
+	  docker push $(DH_NAME)/$(APP_NAME) \
+	  #docker push $(DH_NAME)/$(APP_NAME):${COMMIT_SHORT}; \
 	else \
 	  echo -e "Not on the master branch, won't deploy...\n"; \
 	fi;
