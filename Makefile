@@ -13,18 +13,18 @@ pipeline: test build docker_build docker_test docker_push
 init: ## Initialize project so that it can be built.  Will install angular-cli globally and install npm dependencies locally.
 	#ln -i -s scripts/pre-commit .git/hooks/pre-commit
 	#above line should no longer be necessary with pre-commit package
-	npm install -g angular-cli
+	npm install -g @angular/cli@latest
 	npm install
 	
 update_cli: ## Shortcut to update angular-cli to the latest version
 	@echo "Updating global angular-cli"
-	npm uninstall -g angular-cli
+	npm uninstall -g @angular/cli@latest
 	npm cache clean
-	npm install -g angular-cli@latest
+	npm install -g @angular/cli@latest
 
 	@echo "Updating local angular-cli"
 	rm -rf node_modules dist tmp
-	npm install --save-dev angular-cli@latest
+	npm install --save-dev @angular/cli@latest
 	npm install
 	ng update --routing
 
