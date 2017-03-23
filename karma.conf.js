@@ -41,12 +41,13 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['PhantomJS', 'Chrome'],
     singleRun: false,
-    captureTimeout: 60000, // it was already there
+    
+    captureTimeout: 60000,
     browserDisconnectTimeout : 10000,
     browserDisconnectTolerance : 1,
-    browserNoActivityTimeout : 60000,//by default 10000
+    browserNoActivityTimeout : 60000,
     //hostname: process.env.IP,
     //port: process.env.PORT,
-    runnerPort: 0
+    //runnerPort: 0
   });
 };
