@@ -11,7 +11,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma'),
-      require( 'karma-phantomjs-launcher'),
+      require( 'karma-phantomjs-launcher')
     ],
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
@@ -47,7 +47,6 @@ module.exports = function (config) {
     browserDisconnectTolerance : 1,
     browserNoActivityTimeout : 60000,
     //hostname: process.env.IP,
-    //port: process.env.PORT,
-    //runnerPort: 0
+    //port: process.env.PORT
   });
 };
