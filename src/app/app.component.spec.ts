@@ -1,25 +1,24 @@
-/* tslint:disable:no-unused-variable */
-
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { Routes, RouterModule } from '@angular/router';
 
 
 describe('App: JHauschildt', () => {
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        RouterModule
+      ],
       declarations: [
         AppComponent,
         NavigationComponent
       ],
-      imports: [
-        RouterTestingModule,
-        RouterModule
-      ]
-    });
-  });
+    }).compileComponents();
+  }));
 
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);

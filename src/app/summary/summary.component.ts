@@ -11,11 +11,15 @@ export class SummaryComponent implements OnInit {
 
   public summary: Array<any>;
 
-  constructor(private _summaryService: SummaryService) {
-    this.summary = _summaryService.getSummary();
+  constructor(private summaryService: SummaryService) {
+  }
+
+  getSummary(): void {
+    this.summary = this.summaryService.getSummary();
   }
 
   ngOnInit() {
+    this.getSummary();
   }
 
 }
