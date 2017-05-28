@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SummaryComponent } from './summary/summary.component';
+import { SummaryService } from './summary/summary.service';
 import { TempLandingComponent } from './temp-landing/temp-landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
-import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
     NgbModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [SummaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

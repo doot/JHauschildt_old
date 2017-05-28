@@ -1,9 +1,8 @@
-/* tslint:disable:no-unused-variable */
+import { TestBed, inject } from '@angular/core/testing';
 
-import { TestBed, async, inject } from '@angular/core/testing';
 import { SummaryService } from './summary.service';
 
-describe('Service: Summary', () => {
+describe('SummaryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [SummaryService]
