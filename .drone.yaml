@@ -1,0 +1,12 @@
+pipeline:
+  test:
+    image: node
+    commands:
+      - make init
+      - make test
+
+  build:
+    image: node
+    commands:
+      - make init
+      - make build
