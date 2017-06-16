@@ -4,41 +4,49 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', 'angular-cli'],
+    frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require( 'karma-phantomjs-launcher'),
-      require('karma-remap-istanbul'),
-      require('angular-cli/plugins/karma')
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage-istanbul-reporter'),
+      require('@angular/cli/plugins/karma'),
+      require( 'karma-phantomjs-launcher')
     ],
+    client:{
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
     files: [
       { pattern: './src/test.ts', watched: false }
     ],
     preprocessors: {
-      './src/test.ts': ['angular-cli']
+      './src/test.ts': ['@angular/cli']
     },
     mime: {
       'text/x-typescript': ['ts','tsx']
     },
-    remapIstanbulReporter: {
-      reports: {
-        html: 'coverage',
-        lcovonly: './coverage/coverage.lcov'
-      }
+    coverageIstanbulReporter: {
+      reports: [ 'html', 'lcovonly' ],
+      fixWebpackSourcePaths: true
     },
     angularCli: {
-      config: './angular-cli.json',
       environment: 'dev'
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
-              ? ['progress', 'karma-remap-istanbul']
-              : ['progress'],
+              ? ['progress', 'coverage-istanbul']
+              : ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['PhantomJS', 'Chrome'],
-    singleRun: false
+    singleRun: false,
+    
+    captureTimeout: 60000,
+    browserDisconnectTimeout : 10000,
+    browserDisconnectTolerance : 1,
+    browserNoActivityTimeout : 60000,
+    //hostname: process.env.IP,
+    //port: process.env.PORT
   });
 };
