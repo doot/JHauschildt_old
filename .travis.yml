@@ -1,7 +1,10 @@
-sudo: required 
-language: node_js
+sudo: required
 dist: trusty
+language: node_js
 
+node_js:
+  - "node"
+  
 services:
   - docker
 
