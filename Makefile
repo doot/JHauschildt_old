@@ -43,8 +43,8 @@ build: ## Build project for production
 docker_build: ## Build a docker image to serve the dist directory (built by `make build`) to a tar file
 	@echo -e "Running docker build...\n"
 	@echo COMMIT_SHORT is $(COMMIT_SHORT)
-	echo $(COMMIT_SHORT) > dist/build.version
-	echo $(COMMIT_SHORT) > dist/build.date
+	echo $(COMMIT_SHORT) > dist/build_version
+	date "+%Y%m%d%H%M%S" > dist/build_date
 	docker build --pull -t $(DH_NAME)/$(APP_NAME):$(COMMIT_SHORT) .
 	docker save -o $(APP_NAME)-app.tar $(DH_NAME)/$(APP_NAME):$(COMMIT_SHORT)
 
