@@ -1,0 +1,16 @@
+sudo: required 
+language: node_js
+dist: trusty
+
+services:
+  - docker
+
+install: 
+  - make init
+
+script: 
+  - make test
+  - make build
+
+after_success:
+  - make build
