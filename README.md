@@ -1,5 +1,6 @@
 # JHauschildt
 [![Build Status](https://travis-ci.org/doot/JHauschildt.svg?branch=master)](https://travis-ci.org/doot/JHauschildt)
+
 Mostly doing this to play around with Angular 2, different CI/CD systems, docker, etc...
 
 Placeholder for jhauschildt.com.  It will eventually be a real webpage...

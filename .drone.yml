@@ -1,7 +1,0 @@
-pipeline:
-  build:
-    image: node
-    commands:
-      - make init
-      - make test
-      - make build

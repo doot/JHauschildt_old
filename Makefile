@@ -11,11 +11,9 @@ export LC_ALL=C
 pipeline: test build docker_build docker_test docker_push
 
 init: ## Initialize project so that it can be built.  Will install angular-cli globally and install npm dependencies locally.
-	#ln -i -s scripts/pre-commit .git/hooks/pre-commit
-	#above line should no longer be necessary with pre-commit package
 	npm install -g @angular/cli@latest
 	npm install
-	
+
 update_cli: ## Shortcut to update angular-cli to the latest version
 	@echo "Updating global angular-cli"
 	npm uninstall -g @angular/cli@latest
@@ -58,21 +56,19 @@ docker_test: ## Tests that the docker image file can be loaded and serves a web 
 
 docker_push: ## Deploys docker image file to docker hub tagged with the commit hash.  Only deploys when in the master branch.
 	@echo -e "Attempting deploy, if in master... \n"
-	@if [ "$$SNAP_BRANCH" == "master" ]; then \
+	@if [ "$$BRANCH" == "master" ]; then \
 	  echo -e "Detected master branch, pushing to docker hub...\n"; \
 	  docker load -i $(APP_NAME)-app.tar; \
 	  docker tag $(DH_NAME)/$(APP_NAME):${COMMIT_SHORT} $(DH_NAME)/$(APP_NAME):stable; \
 	  docker tag $(DH_NAME)/$(APP_NAME):${COMMIT_SHORT} $(DH_NAME)/$(APP_NAME):latest; \
-	  #docker push $(DH_NAME)/$(APP_NAME):stable; \
-	  docker push $(DH_NAME)/$(APP_NAME) \
-	  #docker push $(DH_NAME)/$(APP_NAME):${COMMIT_SHORT}; \
+	  docker push $(DH_NAME)/$(APP_NAME); \
 	else \
 	  echo -e "Not on the master branch, won't deploy...\n"; \
 	fi;
 
 dev: ## Serves the project in a dev environment, specifically c9.io IDE
 	ng serve --port $$C9_PORT --host $$C9_IP --aot --no-progress
-	
+
 deploy: ## To be implemented
 	# deploy
 
