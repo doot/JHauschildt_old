@@ -25,3 +25,12 @@ deploy:
   script: docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS && make docker_push
   on:
     branch: master
+
+
+notifications:
+  webhooks:
+    urls:
+      - "$RIOT_WEBHOOK"
+    on_success: always
+    on_failure: always
+    on_start: never
