@@ -52,7 +52,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.4",
     "pre-commit": "^1.2.2",
-    "protractor": "~5.2.0",
+    "protractor": "~5.4.0",
     "ts-node": "~3.3.0",
     "tslint": "^5.4.3",
     "typescript": "^2.3.4"
